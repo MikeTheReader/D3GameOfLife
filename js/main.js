@@ -1,9 +1,9 @@
 
 // Configuration
 var containerWidth = 800;
-var containerHeight = 800;
+var containerHeight = 500;
 var blockRadius = 5;
-var margin = 15;
+var margin = 6;
 var timeDelay = 5;
 var blankColor = '#FFFFFF'
 
@@ -57,14 +57,14 @@ function onload() {
 	var cells = initializeCells();
     
     //createShape(acorn, cells, 50, 50, '#AA0000');
-    //createShape(smallExploder, cells, 10, 10, '#330033');
+    createShape(smallExploder, cells, 10, 40, '#330033');
     //createShape(acorn, cells, 50, 10, '#AA3300');
     //createShape(acorn, cells, 50, 15, '#33AA00');
-    createShape(acorn, cells, 50, 20, '#333300');
-    createShape(exploder, cells, 85, 30, '#00AA00');
-    createShape(glider, cells, 25, 25, '#0000AA');
+    //createShape(acorn, cells, 50, 20, '#333300');
+    createShape(exploder, cells, 60, 10, '#00AA00');
+    //createShape(glider, cells, 25, 25, '#0000AA');
     createShape(gliderGun, cells, 0, 0, '#AAAA00');
-    createShape(exploder, cells, 80, 60, '#00AAAA');
+    //createShape(exploder, cells, 80, 60, '#00AAAA');
     
 	animate(svg, cells);
 }
@@ -187,11 +187,13 @@ function createShape(shape, cells, startingX, startingY, color) {
 
 function createSVG() {
 
-	var svg = d3.select('body')
+	var svg = d3.select('#svg_holder')
 		.append('svg')
 		.attr('width', containerWidth + (margin * 2))
 		.attr('height', containerHeight + (margin * 2))
 		.attr('border', 1)
+		
+	console.log('svg', svg);
 		
 	var borderPath = svg.append('rect')
 		.attr('x', 0)

@@ -1,6 +1,5 @@
 html {
 	padding: 10px;
-}
-p {
-	font-family: Arial, 'Sans-Serif';
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #333;
 }
