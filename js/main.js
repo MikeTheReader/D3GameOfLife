@@ -1,7 +1,7 @@
 
 // Configuration
-var containerWidth = 500;
-var containerHeight = 300;
+var containerWidth = 800;
+var containerHeight = 800;
 var blockRadius = 5;
 var margin = 15;
 var timeDelay = 5;
@@ -56,14 +56,14 @@ function onload() {
     console.log('initializing cells');
 	var cells = initializeCells();
     
-    //createShape(acorn, cells, 50, 50, '#AA0000');
-    //createShape(smallExploder, cells, 10, 10, '#330033');
-    //createShape(acorn, cells, 50, 10, '#AA3300');
+    createShape(acorn, cells, 50, 50, '#AA0000');
+    createShape(smallExploder, cells, 10, 10, '#330033');
+    createShape(acorn, cells, 50, 10, '#AA3300');
     //createShape(acorn, cells, 50, 15, '#33AA00');
     //createShape(acorn, cells, 50, 20, '#333300');
     //createShape(exploder, cells, 85, 30, '#00AA00');
-    //createShape(glider, cells, 25, 25, '#0000AA');
-    createShape(gliderGun, cells, 0, 0, '#AAAA00');
+    createShape(glider, cells, 25, 25, '#0000AA');
+    //createShape(gliderGun, cells, 0, 0, '#AAAA00');
     //createShape(exploder, cells, 80, 60, '#00AAAA');
     
 	animate(svg, cells);
