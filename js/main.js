@@ -59,11 +59,11 @@ function onload() {
     createShape(acorn, cells, 50, 50, '#AA0000');
     //createShape(smallExploder, cells, 10, 10, '#330033');
     createShape(acorn, cells, 50, 10, '#AA3300');
-    //createShape(acorn, cells, 50, 15, '#33AA00');
-    //createShape(acorn, cells, 50, 20, '#333300');
+    createShape(acorn, cells, 50, 15, '#33AA00');
+    createShape(acorn, cells, 50, 20, '#333300');
     //createShape(exploder, cells, 85, 30, '#00AA00');
     createShape(glider, cells, 25, 25, '#0000AA');
-    createShape(gliderGun, cells, 0, 0, '#AAAA00');
+    //createShape(gliderGun, cells, 0, 0, '#AAAA00');
     //createShape(exploder, cells, 80, 60, '#00AAAA');
     
 	animate(svg, cells);
