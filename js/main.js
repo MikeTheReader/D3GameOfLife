@@ -122,10 +122,7 @@ function recalculateCells() {
 
 
             if (surroundingColors.length > 0) {
-                var newColor = surroundingColors[0];
-                for (var c = 1; c < surroundingColors.length; c++) {
-                    newColor = combineColors(newColor, surroundingColors[c]);
-                }
+				var newColor = combineColors(surroundingColors);
                 if (cells[x][y] !== blankColor) {
                     if (totalNeighbors === 2 || totalNeighbors == 3) {
                         newCells[x][y] = newColor;
@@ -143,17 +140,23 @@ function recalculateCells() {
 	cells = newCells;
 }
 
-function combineColors(colorOne, colorTwo) {
-    d3ColorOne = d3.rgb(colorOne);
-    d3ColorTwo = d3.rgb(colorTwo);
+function combineColors(colorArray) {
+	
+	var r = 0;
+	var g = 0;
+	var	b = 0;
+	colorArray.forEach(function(colorText) {
+		var rgbColor = d3.rgb(colorText);
+		r += rgbColor.r;
+		g += rgbColor.g;
+		b += rgbColor.b;
+	});
 
-    combineColor = d3.rgb(
-        Math.min((d3ColorOne.r + d3ColorTwo.r) / 2, 255),
-        Math.min((d3ColorOne.g + d3ColorTwo.g) / 2, 255),
-        Math.min((d3ColorOne.b + d3ColorTwo.b) / 2, 255)
-    );
+	r = Math.min(r / colorArray.length, 255);
+	g = Math.min(g / colorArray.length, 255);
+	b = Math.min(b / colorArray.length, 255);
 
-    return combineColor.toString();
+    return d3.rgb(r, g, b).toString();
 }
 
 function renderCells() {
